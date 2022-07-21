@@ -3,13 +3,24 @@ import telebot
 from telebot import types
 import engine
 import random
+import argparse
 
-# Open file with tokens
-file = open("path", "r")
-BOTtoken = file.readlines()
-BOTtoken = BOTtoken[1][:-1]
+parser = argparse.ArgumentParser(description = "Parse arrgs")
+parser.add_argument('--token_path', help = "Path to the token file", type = str)
+args = parser.parse_args()
 
-bot = telebot.TeleBot(token = BOTtoken)
+bot = ''
+
+if args.token_path:
+    with open(args.token_path, 'r') as f:
+        token =  f.readlines()
+        token = token[1][:-1]
+        bot = telebot.TeleBot(token = token)
+else:
+    with open('tokens.txt', 'r') as f:
+        token =  f.readlines()
+        token = token[1][:-1]
+        bot = telebot.TeleBot(token = token)    
 
 clientStatus = {}
 similarGamesList = []

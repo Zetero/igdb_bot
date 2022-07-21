@@ -1,9 +1,20 @@
 # -*- coding: utf-8 -*-
+from types import NoneType
 import requests
 import random
+import argparse
 
-file = open("E:\\Projects\\Python\\bot.txt", "r")
-tokens = file.readlines()
+parser = argparse.ArgumentParser(description = "Parse arrgs")
+parser.add_argument('--token_path', help = "Path to the token file", type = str)
+args = parser.parse_args()
+tokens = ''
+
+if args.token_path:
+    with open(args.token_path, 'r') as f:
+        tokens =  f.readlines()
+else:
+    with open('tokens.txt', 'r') as f:
+        tokens =  f.readlines()
 
 client_id = tokens[3][:-1]
 secret_key = tokens[5][:-1]

@@ -1,0 +1,8 @@
+Telegram Bot API Key: 
+123
+Client Id Twitch:
+123
+Secret Key Twitch:
+123
+Access Token IGDb:
+123
