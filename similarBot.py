@@ -5,7 +5,7 @@ import engine
 import random
 
 # Open file with tokens
-file = open("E:\\Projects\\Python\\bot.txt", "r")
+file = open("path", "r")
 BOTtoken = file.readlines()
 BOTtoken = BOTtoken[1][:-1]
 
