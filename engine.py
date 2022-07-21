@@ -16,12 +16,12 @@ else:
     with open('tokens.txt', 'r') as f:
         tokens =  f.readlines()
 
-client_id = tokens[3][:-1]
-secret_key = tokens[5][:-1]
-access_token = tokens[7][:-1]
+client_id = tokens[3].strip('\n')
+secret_key = tokens[5].strip('\n')
+access_token = tokens[7].strip('\n')
 header = {'Client-ID': f'{client_id}', 'Authorization': f'Bearer {access_token}'}
 # REMAKE IGDb TOKEN
-#header = {'client_id': f'{tokens[3][:-1]}', 'client_secret': f'{tokens[5][:-1]}', 'grant_type':'client_credentials'}
+#header = {'client_id': f'{tokens[3].strip('\n')}', 'client_secret': f'{tokens[5].strip('\n')}', 'grant_type':'client_credentials'}
 #print(requests.post('https://id.twitch.tv/oauth2/token', data = header).json())
 
 

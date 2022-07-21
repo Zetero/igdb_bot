@@ -14,12 +14,12 @@ bot = ''
 if args.token_path:
     with open(args.token_path, 'r') as f:
         token =  f.readlines()
-        token = token[1][:-1]
+        token = token[1].strip('\n')
         bot = telebot.TeleBot(token = token)
 else:
     with open('tokens.txt', 'r') as f:
         token =  f.readlines()
-        token = token[1][:-1]
+        token = token[1].strip('\n')
         bot = telebot.TeleBot(token = token)    
 
 clientStatus = {}

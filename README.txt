@@ -1,0 +1,15 @@
+The implementation of the bot is written in the script "bat.py"
+The implementation of post request functions to the IGDb server is written in the script "engine.py"
+
+Running the script from the console is available with the "--token_path [token_path]" argument to specify a different path of the token file
+
+For the bot to work, you need to change the attached file "tokens.txt " or create in the format:
+
+Telegram Bot API Key: 
+[API_Key]
+Client Id Twitch:
+[Client_ID]
+Secret Key Twitch:
+[Secret_Key]
+Access Token IGDb:
+[Access_Token]
